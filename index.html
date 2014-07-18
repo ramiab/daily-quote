@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page">
+
+        <div data-role="header">
+            <h1>Daily-Quote</h1>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <div>
+
+				<p id="the-quote" class="quote" ></p>
+                <a id="the-quote-link" class="ui-btn ui-corner-all" href="#">גלה</a>
+
+                <div class="buttons-row" data-role="controlgroup" data-type="horizontal">
+                    <a id="next" href="index.html" class="ui-btn ui-corner-all">הבא</a>
+                    <a id="previous" href="index.html" class="ui-btn ui-corner-all">הקודם</a>
+                </div>
+
+
+                <!-- /content -->
+
+            </div>
+            <!-- /page -->
+        </div>
+
+        
+        <script>
+        	app.initialize();
+        </script>
+</body>
+
+</html>
