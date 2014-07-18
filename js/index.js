@@ -38,12 +38,13 @@ var app = new function() {
             rand = that.getRandomIndex();
         }
         else {
-            var lastRand = this.quotesHistory[this.quotesHistory.length]
-            while (  rand == lastRand ){
-                rand = that.getRandomIndex();    
+            var len = that.quotesHistory.length;
+            var lastRand = that.quotesHistory[len-1];
+            while (  !rand || rand == lastRand ){
+                    rand = that.getRandomIndex();    
             }
         }
-        that.quotesHistory[length] = rand;
+        that.quotesHistory[that.quotesHistory.length] = rand;
         return QUOTES[rand];
     };
 
@@ -73,10 +74,11 @@ var app = new function() {
             that.displayRandomQuote();
         });
         $('#previous').click(function(){
-            if( that.quotesHistory == null ){
+            if( that.quotesHistory == null || that.quotesHistory.length<=1 ){
                 return;
             }
-            var lastQuoteNum = that.quotesHistory.pop();
+            that.quotesHistory.pop();
+            var lastQuoteNum = that.quotesHistory[that.quotesHistory.length-1];
             var quote = QUOTES[lastQuoteNum]
             that.displayQuote(quote);
         });
