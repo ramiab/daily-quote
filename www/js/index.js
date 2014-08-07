@@ -62,7 +62,9 @@ var app = new function() {
     this.initialize = function() {
         that.bindEvents();
         that.displayRandomQuote();
+
     };
+
 
     // Bind Event Listeners
     //
@@ -70,6 +72,7 @@ var app = new function() {
     // 'load', 'deviceready', 'offline', and 'online'.
     this.bindEvents = function() {
         document.addEventListener('deviceready', that.onDeviceReady, false);
+
         $('#next').click(function(){
             that.displayRandomQuote();
         });
@@ -90,6 +93,21 @@ var app = new function() {
     // function, we must explicitly call 'app.receivedEvent(...);'
     this.onDeviceReady = function() {
         app.receivedEvent('deviceready');
+
+        alert("1");
+        window.plugin.notification.local.add({ message: 'Great app!' });
+        alert("2");
+        var now                  = new Date().getTime(),
+        _60_seconds_from_now = new Date(now + 60*1000);
+
+        window.plugin.notification.local.add({
+        id:      1, // is converted to a string
+        title:   'Reminder',
+        message: 'Dont forget to buy some flowers.',
+        repeat:  'weekly',
+        date:    _60_seconds_from_now
+        });
+        alert("3");
     };
 
     // Update DOM on a Received Event

@@ -1,0 +1,19 @@
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes.dex : \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\BuildConfig.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\HelloWorld.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\R$attr.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\R$drawable.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\R$string.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\R$xml.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\com\example\hello\R.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\LocalNotification$1.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\LocalNotification$2.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\LocalNotification$3.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\LocalNotification$4.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\LocalNotification.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\Options.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\Receiver.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\ReceiverActivity.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\de\appplant\cordova\plugin\localnotification\Restore.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
+C:\RAMI\dev\daily-quote\platforms\android\ant-build\dexedLibs\classes-f5198d27aa6f591406a9ae4838abac21.jar \
