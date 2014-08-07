@@ -87,16 +87,17 @@ h1 {
     color: grey;
 }
 .quote {
-    font-size: 180%;
+    font-size: 350%;
     font-weight: bold;
     text-align: right;
     padding: 0px;
     margin: 0px;
-    color: #000099;
+    color: #000066;
     display: block;
     float: left;
     width: 100%;
     vertical-align:top;
+    
 }
 
 .buttons-row{
