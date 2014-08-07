@@ -60,6 +60,7 @@ var app = new function() {
 
     // Application Constructor
     this.initialize = function() {
+        alert("STARTING...");
         that.bindEvents();
         that.displayRandomQuote();
 
@@ -93,6 +94,7 @@ var app = new function() {
     // function, we must explicitly call 'app.receivedEvent(...);'
     this.onDeviceReady = function() {
         app.receivedEvent('deviceready');
+        alert("DEVICE IS READY...");
 
         alert("1");
         window.plugin.notification.local.add({ message: 'Great app!' });
