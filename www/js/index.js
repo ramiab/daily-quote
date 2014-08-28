@@ -18,30 +18,30 @@
  */
 
 var QUOTES = [
-{"text":"מה שקורה הוא שחייב לקרות. הסוף תמיד טוב. ", "url":"http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
-{"text":"לחשוב אמת, לדבר אמת, לעשות אמת ולהמשיך ולהתקדם, ללא גאווה. ", "url":"http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
-{"text":"מסלקים את המלאכותי, הלא אמיתי וחושפים את הטבעי, האמיתי - בעזרת נושא ההתבוננות. ", "url":"http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
-{"text":'"התבוננות לא טובה" - התבוננות שלא קוימה. ', "url":"http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
-{"text":"אל תבכה ואל תרחם על עצמך. חשוף את החדווה, המאירה בלבך בכל עת תמיד. ", "url":"http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
+    {"text": "מה שקורה הוא שחייב לקרות. הסוף תמיד טוב. ", "url": "http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
+    {"text": "לחשוב אמת, לדבר אמת, לעשות אמת ולהמשיך ולהתקדם, ללא גאווה. ", "url": "http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
+    {"text": "מסלקים את המלאכותי, הלא אמיתי וחושפים את הטבעי, האמיתי - בעזרת נושא ההתבוננות. ", "url": "http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
+    {"text": '"התבוננות לא טובה" - התבוננות שלא קוימה. ', "url": "http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
+    {"text": "אל תבכה ואל תרחם על עצמך. חשוף את החדווה, המאירה בלבך בכל עת תמיד. ", "url": "http://www.y-dat.co.il/191001/%D7%AA%D7%A9%D7%95%D7%91%D7%95%D7%AA"},
 ];
 
 var app = new function() {
-    this.quotesHistory = [];    
+    this.quotesHistory = [];
     that = this;
     this.getRandomIndex = function() {
-        return Math.floor(Math.random() * QUOTES.length); 
-    }
+        return Math.floor(Math.random() * QUOTES.length);
+    };
 
     this.getRandomQuote = function() {
         var rand = null;
-        if( that.quotesHistory.length == 0 ){
+        if (that.quotesHistory.length === 0) {
             rand = that.getRandomIndex();
         }
         else {
             var len = that.quotesHistory.length;
-            var lastRand = that.quotesHistory[len-1];
-            while (  !rand || rand == lastRand ){
-                    rand = that.getRandomIndex();    
+            var lastRand = that.quotesHistory[len - 1];
+            while (!rand || rand === lastRand) {
+                rand = that.getRandomIndex();
             }
         }
         that.quotesHistory[that.quotesHistory.length] = rand;
@@ -72,18 +72,19 @@ var app = new function() {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     this.bindEvents = function() {
+        alert("bindEvents...");
         document.addEventListener('deviceready', that.onDeviceReady, false);
 
-        $('#next').click(function(){
+        $('#next').click(function() {
             that.displayRandomQuote();
         });
-        $('#previous').click(function(){
-            if( that.quotesHistory == null || that.quotesHistory.length<=1 ){
+        $('#previous').click(function() {
+            if (that.quotesHistory === null || that.quotesHistory.length <= 1) {
                 return;
             }
             that.quotesHistory.pop();
-            var lastQuoteNum = that.quotesHistory[that.quotesHistory.length-1];
-            var quote = QUOTES[lastQuoteNum]
+            var lastQuoteNum = that.quotesHistory[that.quotesHistory.length - 1];
+            var quote = QUOTES[lastQuoteNum];
             that.displayQuote(quote);
         });
     };
@@ -93,27 +94,28 @@ var app = new function() {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     this.onDeviceReady = function() {
-        app.receivedEvent('deviceready');
-        alert("DEVICE IS READY...");
-
+        alert("onDeviceReady...");
+//        that.receivedEvent('deviceready');
         alert("1");
-        window.plugin.notification.local.add({ message: 'Great app!' });
+        window.plugin.notification.local.add({message: 'Great app!'});
         alert("2");
-        var now                  = new Date().getTime(),
-        _60_seconds_from_now = new Date(now + 60*1000);
+        var now = new Date().getTime(),
+                _5_seconds_from_now = new Date(now + 5 * 1000);
 
         window.plugin.notification.local.add({
-        id:      1, // is converted to a string
-        title:   'Reminder',
-        message: 'Dont forget to buy some flowers.',
-        repeat:  'weekly',
-        date:    _60_seconds_from_now
+            id: 1, // is converted to a string
+            title: 'Reminder',
+            message: 'Dont forget to buy some flowers.',
+            repeat: 'weekly',
+            date: _5_seconds_from_now
         });
         alert("3");
     };
 
     // Update DOM on a Received Event
     this.receivedEvent = function(id) {
+        alert("receivedEvent...");
+
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -122,5 +124,5 @@ var app = new function() {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    };
 };
